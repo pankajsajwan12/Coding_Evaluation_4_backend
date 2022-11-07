@@ -1,7 +1,10 @@
 const {Router} = require("express")
 const {TodoModel} = require("../models/Todo.model")
+const cors = require("cors")
 
 const todoRouter = Router();
+
+todoRouter.use(cors());
 
 todoRouter.get("/:userId", async(req,res) => {
    const { userId } = req.params;
